@@ -1,8 +1,9 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
-const Erropage = () => {
+const Errorpage = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -12,12 +13,18 @@ const Erropage = () => {
   }, []);
 
   return (
-    <div className="mt-[100px] w-4/5 m-auto">
-      <h1 className="text-6xl mb-4 font-extrabold">Oops!</h1>
-      <h2 className="text-[20px]">404, Error not found.</h2>
-      <Link href="/">Go back to homepage</Link>
-    </div>
+    <>
+      <Head>
+        <title>404 page Error </title>
+        <meta name="keywords" content="Ninja List" />
+      </Head>
+      <div className="w-4/5 m-auto mt-24">
+        <h1 className="font-bold text-3xl md:text-6xl mb-5">Oops!</h1>
+        <h2 className="mb-4 text-[#999]">404, Page not found</h2>
+        <Link href="/">Please navigate back to home</Link>
+      </div>
+    </>
   );
 };
 
-export default Erropage;
+export default Errorpage;
